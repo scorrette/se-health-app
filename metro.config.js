@@ -4,8 +4,9 @@
  *
  * @format
  */
+const {mergeConfig, getDefaultConfig} = require('metro-config');
 
-module.exports = {
+const configA = {
   transformer: {
     getTransformOptions: async () => ({
       transform: {
@@ -15,3 +16,20 @@ module.exports = {
     }),
   },
 };
+
+const configB = (async () => {
+  const {
+    resolver: {sourceExts, assetExts},
+  } = await getDefaultConfig();
+  return {
+    transformer: {
+      babelTransformerPath: require.resolve('react-native-svg-transformer'),
+    },
+    resolver: {
+      assetExts: assetExts.filter(ext => ext !== 'svg'),
+      sourceExts: [...sourceExts, 'svg'],
+    },
+  };
+})();
+
+module.exports = mergeConfig(configA, configB);

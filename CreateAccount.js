@@ -52,7 +52,8 @@ export default class CreateAccount extends React.Component {
           onPress={() => this.props.navigation.navigate('LoginScreen')}>
           <Text style={styles.forgot}>Back to Login Screen</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn}
+          onPress={() => this.props.navigation.navigate('Guide1Screen')}>
           <Text style={styles.loginText}>Create Account</Text>
         </TouchableOpacity>
       </View>
