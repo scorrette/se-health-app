@@ -25,7 +25,9 @@ export default class Guide5 extends Component {
           <View style={styles.rightView}>
             <TouchableOpacity
               style={styles.rightBtn}
-              onPress={() => this.props.navigation.navigate('LoginScreen')}>
+              onPress={() =>
+                this.props.navigation.navigate('CapsSurveyScreen')
+              }>
               <Text style={styles.loginText}>Next!</Text>
             </TouchableOpacity>
           </View>
