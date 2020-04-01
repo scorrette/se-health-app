@@ -29,7 +29,23 @@ export default class Login extends Component {
             onChangeText={this.onChangeEmail.bind(this)}
           />
         </View>
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity
+          style={styles.loginBtn}
+          onPress={() => {
+            //Reset email as stored in state when button is pressed
+            //Do something if successful in .then block, otherwise do something else if failed in catch block
+
+            //Currently no output is given for success or failure
+            //TODO output status message of reset attempt
+            firebase.auth()
+              .sendPasswordResetEmail(this.state.email)
+              .then(function() {
+                // Email sent.
+              })
+              .catch(function(error) {
+                // An error happened.
+              });
+          }}>
           <Text style={styles.loginText}>Send Reset Link</Text>
         </TouchableOpacity>
         <TouchableOpacity

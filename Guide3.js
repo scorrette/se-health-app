@@ -51,7 +51,13 @@ export default class Guide3 extends Component {
           <View style={styles.rightView}>
             <TouchableOpacity
               style={styles.rightBtn}
-              onPress={() => this.props.navigation.navigate('Guide4Screen')}>
+              onPress={() => {
+                //Submit data to /collection/doc/field
+                //Currently /collection is the internal user ID, note that UID is different than username or email
+                //TODO REMOVE, just a test submission
+                firebase.firestore().collection(firebase.auth().currentUser.uid).doc('testMenu').set({'radioButton':this.state.value});
+                this.props.navigation.navigate('Guide4Screen');
+              }}>
               <Text style={styles.loginText}>Next!</Text>
             </TouchableOpacity>
           </View>
@@ -60,6 +66,10 @@ export default class Guide3 extends Component {
     );
   }
 }
+
+//Unbreak firestore
+
+
 
 const styles = StyleSheet.create({
   container: {
