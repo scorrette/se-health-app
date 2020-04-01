@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {
+  ImageBackground,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
-  Image,
-  FlatList,
+  Button,
   SafeAreaView,
   ScrollView,
+  Image,
+  TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import {withNavigation} from '@react-navigation/compat';
 
@@ -143,7 +144,7 @@ let items = [
   },
 ];
 
-class Guide4 extends React.Component {
+class EmotionWheel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -185,9 +186,7 @@ class Guide4 extends React.Component {
       <SafeAreaView style={styles.container}>
         <ScrollView>
           <Text style={styles.loginText}>
-            Each day you can input how you're feeling! Use the diagram to narrow
-            down how you're feeling and select the corresponding emotion(s) from
-            the dropdown like the one below!
+            Mood Input according to Plutchik's Wheel of Emotions
           </Text>
           <Image
             style={styles.smol}
@@ -196,22 +195,6 @@ class Guide4 extends React.Component {
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plutchik-wheel.svg/1200px-Plutchik-wheel.svg.png',
             }}
           />
-          <View style={styles.rowContainer}>
-            <View style={styles.leftView}>
-              <TouchableOpacity
-                style={styles.leftBtn}
-                onPress={() => this.props.navigation.navigate('Guide3Screen')}>
-                <Text style={styles.loginText}>Back!</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.rightView}>
-              <TouchableOpacity
-                style={styles.rightBtn}
-                onPress={() => this.props.navigation.navigate('Guide5Screen')}>
-                <Text style={styles.loginText}>Next!</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
         </ScrollView>
         <FlatList
           data={this.state.dataSource}
@@ -225,7 +208,7 @@ class Guide4 extends React.Component {
   }
 }
 
-export default withNavigation(Guide4);
+export default withNavigation(EmotionWheel);
 
 const styles = StyleSheet.create({
   container: {
