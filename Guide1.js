@@ -1,3 +1,6 @@
+//First screen of guide sequence
+//Intro
+
 import React, {Component} from 'react';
 import {
   StyleSheet,

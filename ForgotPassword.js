@@ -1,3 +1,5 @@
+//Forgot Password Screen
+
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Component} from 'react';

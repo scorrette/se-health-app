@@ -1,3 +1,6 @@
+//fifth screen of guide sequence
+//outro
+
 import React, {Component} from 'react';
 import {
   StyleSheet,

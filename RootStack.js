@@ -1,3 +1,5 @@
+//establishing rootstack for screen navigation
+
 import {createStackNavigator} from '@react-navigation/stack';
 import {createCompatNavigatorFactory} from '@react-navigation/compat';
 import Login from './Login';

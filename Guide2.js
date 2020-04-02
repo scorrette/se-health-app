@@ -1,3 +1,6 @@
+//Second Screen of Guide sequence
+//Explanation of purpose/methods
+
 import React, {Component} from 'react';
 import {
   StyleSheet,

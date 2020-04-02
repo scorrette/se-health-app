@@ -1,3 +1,6 @@
+//Third screen of guide sequence
+//Survey explanation
+
 import React, {Component} from 'react';
 import {
   StyleSheet,

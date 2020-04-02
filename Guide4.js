@@ -1,3 +1,6 @@
+//fourth screen of guide sequence
+//plutchik's wheel of emotion input guide
+
 import React, {Component} from 'react';
 import {
   StyleSheet,
